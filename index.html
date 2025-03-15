@@ -1480,19 +1480,16 @@
             "https://script.google.com/macros/s/AKfycbwyyayGPE6adaMBbAUoWJa8WSDzgLDHT3zQXlM8aaCPgwVJ7Bs5ome801OD1VscKis/exec",
             {
               method: "POST",
-              headers: { "Content-Type": "application/json" },
+              mode: "cors", // Додаємо режим CORS
+              headers: {
+                "Content-Type": "application/json",
+              },
               body: JSON.stringify({ email: "test@gmail.com" }),
             }
           )
-            .then((response) => response.json()) // Тепер сервер повертає JSON
-            .then((data) => {
-              console.log(data);
-              alert("Subscribed successfully!");
-            })
-            .catch((error) => {
-              console.error(error);
-              alert("Error subscribing!");
-            });
+            .then((response) => response.json())
+            .then((data) => console.log("Success:", data))
+            .catch((error) => console.error("Error:", error));
         });
     </script>
   </body>
