@@ -1,4 +1,4 @@
-import CONFIG from "./config.js"; // Підключаємо файл конфігурації
+import { CONFIG } from "./config.js"; // Підключаємо файл конфігурації
 
 async function getYouTubeSubscribers() {
     const url = `https://www.googleapis.com/youtube/v3/channels?part=statistics&id=${CONFIG.CHANNEL_ID_YOUTUBE}&key=${CONFIG.API_KEY}`;
