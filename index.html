@@ -1481,23 +1481,16 @@
             {
               method: "POST",
               headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({ email: email }), // ТЕПЕР ВІДПРАВЛЯЄМО ВВЕДЕНИЙ EMAIL
+              body: JSON.stringify({ email: "test@gmail.com" }),
             }
           )
-            .then((response) => {
-              console.log("Статус відповіді:", response.status); // ЛОГУЄМО HTTP-СТАТУС
-              return response.text();
-            })
+            .then((response) => response.json()) // Тепер сервер повертає JSON
             .then((data) => {
-              console.log("Відповідь від сервера:", data); // ЛОГУЄМО ВІДПОВІДЬ
-              if (data.includes("Success")) {
-                alert("Subscribed successfully!");
-              } else {
-                alert("Помилка: " + data);
-              }
+              console.log(data);
+              alert("Subscribed successfully!");
             })
             .catch((error) => {
-              console.error("Fetch error:", error);
+              console.error(error);
               alert("Error subscribing!");
             });
         });
