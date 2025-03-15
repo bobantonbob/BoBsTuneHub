@@ -1360,16 +1360,13 @@
               products and services!
             </p>
             <form id="newsletter-form">
-              <div class="newsletter-form">
-                <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  placeholder="Enter your email"
-                  required
-                />
-                <input type="submit" value="Subscribe" />
-              </div>
+              <input
+                type="email"
+                id="email"
+                placeholder="Введіть ваш email"
+                required
+              />
+              <button type="submit">Subscribe</button>
             </form>
           </div>
         </div>
@@ -1468,27 +1465,40 @@
     </script>
 
     <script>
+      const API2_KEY = "AIzaSyA7nogHOJC806CrBSxNm32Okb_yC-myZrg"; // Встав API-ключ
+      const SPREADSHEET_ID = "1plKk7HWnEaGdlq6VEypQWfArYzJXuaxPqhYetL4nYPs"; // ID твоєї таблиці
+
+      async function saveEmailToGoogleSheets(email) {
+        const url = `https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/A1:append?valueInputOption=USER_ENTERED&key=${API2_KEY}`;
+
+        const data = {
+          values: [[email, new Date().toLocaleString()]],
+        };
+
+        try {
+          const response = await fetch(url, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+          });
+
+          const result = await response.json();
+          console.log("Успіх:", result);
+          alert("Subscribed successfully!");
+        } catch (error) {
+          console.error("Помилка запису:", error);
+          alert("Error subscribing!");
+        }
+      }
+
       document
         .getElementById("newsletter-form")
         .addEventListener("submit", function (e) {
           e.preventDefault();
-
-          let email = document.getElementById("email").value;
-          console.log("Отриманий email:", email); // Перевіряємо email
-
-          fetch(
-            "https://script.google.com/macros/s/AKfycbwyyayGPE6adaMBbAUoWJa8WSDzgLDHT3zQXlM8aaCPgwVJ7Bs5ome801OD1VscKis/exec",
-            {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify({ email: email }),
-            }
-          )
-            .then((response) => response.json())
-            .then((data) => console.log("Success:", data))
-            .catch((error) => console.error("Error:", error));
+          const email = document.getElementById("email").value;
+          saveEmailToGoogleSheets(email);
         });
     </script>
   </body>
