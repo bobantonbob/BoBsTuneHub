@@ -1333,11 +1333,15 @@
               target="_blank"
               class="logo d-flex align-items-center"
             >
-              <span class="sitename sitename2">BoB's Tune Hub</span>
+              <span class="sitename sitename2" style="font-size: 24px"
+                >BoB's Tune Hub</span
+              >
             </a>
             <div class="footer-contact pt-3">
               <!-- <strong>Phone:</strong> <span>+1 5589 55488 55</span> -->
-              <p><strong>Email:</strong> <span>bobstunehub@gmail.com </span></p>
+              <p style="font-size: 18px">
+                <strong>Email:</strong> <span>bobstunehub@gmail.com </span>
+              </p>
             </div>
             <div class="social-links d-flex mt-4">
               <a href="https://x.com/hub_bo64354"
@@ -1354,19 +1358,45 @@
           </div>
 
           <div class="col-lg-4 col-md-12 footer-newsletter">
-            <h4>Our Newsletter</h4>
-            <p>
-              Subscribe to our newsletter and receive the latest news about our
-              products and services!
+            <h4 class="sitename sitename3" style="font-size: 24px">
+              Stay Tuned with BoB's Tune Hub
+            </h4>
+            <p style="font-size: 18px">
+              Get the freshest beats and updates straight to your inbox!
             </p>
-            <form id="newsletter-form">
+            <p style="font-size: 18px">Join our music journey today.</p>
+          </div>
+
+          <div class="col-lg-4 col-md-12 footer-newsletter">
+            <form action="https://api.web3forms.com/submit" method="POST">
               <input
-                type="email"
-                id="email"
-                placeholder="Введіть ваш email"
+                type="hidden"
+                name="access_key"
+                value="8c889318-da94-4a48-baa2-ca6640a76a8b"
+              />
+              <input
+                type="text"
+                name="name"
+                class="newsletter-input"
+                placeholder="Your Name"
                 required
               />
-              <button type="submit">Subscribe</button>
+              <input
+                type="email"
+                name="email"
+                class="newsletter-input"
+                placeholder="Your Email"
+                required
+              />
+              <textarea
+                name="message"
+                class="newsletter-textarea"
+                placeholder="Your Message"
+                required
+              ></textarea>
+              <button type="submit" class="neon-btn spotify-btn">
+                Subscribe
+              </button>
             </form>
           </div>
         </div>
@@ -1462,37 +1492,6 @@
       }
 
       fetchViews();
-    </script>
-
-    <script>
-      document
-        .getElementById("newsletter-form")
-        .addEventListener("submit", function (e) {
-          e.preventDefault();
-
-          let email = document.getElementById("email").value;
-          console.log("Отриманий email:", email);
-
-          fetch(
-            "https://script.google.com/macros/s/AKfycbzAHb2YrERyM7AVY0T9pGUcr63zeGjB56Tg7w7PyAWViRJSSu6gxjvOWlfZtw_9B-w/exec",
-            {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify({ email: email }),
-            }
-          )
-            .then((response) => response.text())
-            .then((data) => {
-              alert("Subscribed successfully!");
-              console.log("Server Response:", data);
-            })
-            .catch((error) => {
-              console.error("Error:", error);
-              alert("Error subscribing!");
-            });
-        });
     </script>
   </body>
 </html>

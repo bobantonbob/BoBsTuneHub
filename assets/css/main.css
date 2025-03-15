@@ -2092,3 +2092,71 @@ h1 span {
   height: 0;
   overflow: hidden;
 }
+
+
+
+
+
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 900px;
+  margin: auto;
+  background: #14147a;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+}
+
+.footer-section {
+  flex: 1;
+  padding: 10px;
+}
+
+.newsletter-input,
+.newsletter-textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.newsletter-button {
+  background: #00d9ff;
+  color: #000;
+  font-size: 14px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.newsletter-button:hover {
+  background: #1db954;
+}
+
+
+
+@keyframes pulse {
+  0% {
+    text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 15px #ff00ff;
+  }
+
+  50% {
+    text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
+  }
+
+  100% {
+    text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 15px #ff00ff;
+  }
+}
+
+.sitename3 {
+  font-size: 24px;
+  font-weight: bold;
+  animation: pulse 1.5s infinite alternate;
+}
