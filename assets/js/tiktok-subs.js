@@ -1,4 +1,4 @@
-import CONFIG from "./config.js"; // Підключаємо конфігурацію
+import { CONFIG } from "./config.js"; // Підключаємо конфігурацію
 
 async function getTikTokUserID(username) {
     const url = `https://open.tiktokapis.com/v2/user/info?username=${username}`;
