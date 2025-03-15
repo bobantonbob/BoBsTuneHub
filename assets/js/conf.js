@@ -1,6 +1,3 @@
-import dotenv from 'dotenv';
-dotenv.config();
-
 export const CONFIG = {
     API_KEY: process.env.API_KEY,
     CHANNEL_ID_YOUTUBE: process.env.CHANNEL_ID_YOUTUBE,
