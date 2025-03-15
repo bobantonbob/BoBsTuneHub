@@ -1465,40 +1465,33 @@
     </script>
 
     <script>
-      const API2_KEY = "AIzaSyA7nogHOJC806CrBSxNm32Okb_yC-myZrg"; // Встав API-ключ
-      const SPREADSHEET_ID = "1plKk7HWnEaGdlq6VEypQWfArYzJXuaxPqhYetL4nYPs"; // ID твоєї таблиці
-
-      async function saveEmailToGoogleSheets(email) {
-        const url = `https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/A1:append?valueInputOption=USER_ENTERED&key=${API2_KEY}`;
-
-        const data = {
-          values: [[email, new Date().toLocaleString()]],
-        };
-
-        try {
-          const response = await fetch(url, {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(data),
-          });
-
-          const result = await response.json();
-          console.log("Успіх:", result);
-          alert("Subscribed successfully!");
-        } catch (error) {
-          console.error("Помилка запису:", error);
-          alert("Error subscribing!");
-        }
-      }
-
       document
         .getElementById("newsletter-form")
         .addEventListener("submit", function (e) {
           e.preventDefault();
-          const email = document.getElementById("email").value;
-          saveEmailToGoogleSheets(email);
+
+          let email = document.getElementById("email").value;
+          console.log("Отриманий email:", email);
+
+          fetch(
+            "https://script.google.com/macros/s/AKfycbzAHb2YrERyM7AVY0T9pGUcr63zeGjB56Tg7w7PyAWViRJSSu6gxjvOWlfZtw_9B-w/exec",
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({ email: email }),
+            }
+          )
+            .then((response) => response.text())
+            .then((data) => {
+              alert("Subscribed successfully!");
+              console.log("Server Response:", data);
+            })
+            .catch((error) => {
+              console.error("Error:", error);
+              alert("Error subscribing!");
+            });
         });
     </script>
   </body>
