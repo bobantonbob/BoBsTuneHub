@@ -49,8 +49,6 @@
           target="_blank"
           class="logo d-flex align-items-center"
         >
-          <!-- Uncomment the line below if you also wish to use an image logo -->
-          <!-- <img src="assets/img/logo.png" alt=""> -->
           <h1 class="sitename sitename2">BoB's Tune Hub</h1>
         </a>
 
@@ -61,12 +59,17 @@
             <li><a href="#features">Playlists</a></li>
             <li><a href="#gallery">Vinyl</a></li>
             <li><a href="#team">Team</a></li>
-            <li><a href="#contact">Contact</a></li>
           </ul>
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
       </div>
     </header>
+
+    <!-- Незалежний YouTube Player у правому верхньому куті -->
+    <div class="youtube-container">
+      <div id="player"></div>
+      <p id="youtubeViews">Views: Loading...</p>
+    </div>
 
     <main class="main">
       <!-- Hero Section -->
@@ -104,13 +107,13 @@
                 <a
                   href="https://www.youtube.com/@BoBsTuneHub"
                   target="_blank"
-                  class="btn-get-started"
+                  class="neon-btn youtube-btn"
                   >YouTube</a
                 >
                 <a
                   href="https://open.spotify.com/artist/2pW1BmdHusb2IHl9EKlzTf"
                   target="_blank"
-                  class="btn-get-started spotify-btn"
+                  class="neon-btn spotify-btn"
                   >Spotify</a
                 >
                 <a
@@ -155,18 +158,32 @@
         <div class="container" data-aos="fade-up" data-aos-delay="100">
           <div class="row align-items-xl-center gy-5">
             <div class="col-xl-5 content">
-              <h3 class="neon-title" style="color: #220033">Singles</h3>
-              <h2>Listen to fresh and trending singles from top artists!</h2>
-              <p>
-                Discover exclusive releases and the hottest hits taking over the
-                charts.
-              </p>
+              <div class="container section-title" data-aos="fade-up">
+                <h2>Exclusive</h2>
+                <div class="titleneonPulse">
+                  <span>Singles by</span>
+                  <span class="description-title">BoB’s Tune Hub</span>
+                </div>
+                <p>
+                  🎶 Get ready for an electrifying ride through the freshest
+                  singles! <br />BoB’s Tune Hub brings you the hottest and most
+                  trending tracks from rising stars and top-charting artists.
+                </p>
+                <p>
+                  🎶 Whether you're craving pulsating beats, soulful melodies,
+                  or dancefloor anthems, this collection delivers a non-stop
+                  wave of musical energy.
+                </p>
+                <p>
+                  🎶 Feel the rhythm and discover your next favorite song today!
+                </p>
+              </div>
               <a
-                href="https://music.youtube.com/channel/UCbq9zqpgqXoWAJvMeFPmqeg"
+                href="https://music.youtube.com/browse/MPADUCbq9zqpgqXoWAJvMeFPmqeg"
                 target="_blank"
-                class="read-more"
-                ><span>Read More</span><i class="bi bi-arrow-right"></i
-              ></a>
+                class="neon-btn spotify-btn"
+                ><span>Read More</span></a
+              >
             </div>
 
             <div class="col-xl-7">
@@ -587,7 +604,7 @@
             </div>
             <!-- End Stats Item -->
 
-            <div
+            <!-- <div
               class="col-lg-3 col-md-6 d-flex flex-column align-items-center"
             >
               <i class="bi bi-people"></i>
@@ -600,7 +617,7 @@
                 ></span>
                 <p>Spotify</p>
               </div>
-            </div>
+            </div> -->
             <!-- End Stats Item -->
           </div>
         </div>
@@ -612,7 +629,7 @@
         <!-- Playlists Title -->
         <div class="container section-title" data-aos="fade-up">
           <h2>Exclusive</h2>
-          <div>
+          <div class="titleneonPulse">
             <span>Playlists by</span>
             <span class="description-title">BoB’s Tune Hub</span>
           </div>
@@ -677,64 +694,47 @@
               data-aos="zoom-out"
               data-aos-delay="200"
             >
-              <img src="assets/img/details-2.png" class="img-fluid" alt="" />
+              <iframe
+                style="border-radius: 12px"
+                src="https://open.spotify.com/embed/playlist/37i9dQZF1E4yKW8qEQrbm6?utm_source=generator&theme=0"
+                width="100%"
+                height="352"
+                frameborder="0"
+                allowfullscreen=""
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"
+              ></iframe>
             </div>
             <div
               class="col-md-7 order-2 order-md-1"
               data-aos="fade-up"
               data-aos-delay="200"
             >
-              <h3>Corporis temporibus maiores provident</h3>
+              <h3>🎶 BoB's Tune Hub – Midnight Vibes</h3>
               <p class="fst-italic">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-              <p>
-                Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-                aute irure dolor in reprehenderit in voluptate velit esse cillum
-                dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                cupidatat non proident, sunt in culpa qui officia deserunt
-                mollit anim id est laborum
-              </p>
-            </div>
-          </div>
-          <!-- Playlists Item -->
-
-          <div class="row gy-4 align-items-center features-item">
-            <div class="col-md-5 d-flex align-items-center" data-aos="zoom-out">
-              <img src="assets/img/details-3.png" class="img-fluid" alt="" />
-            </div>
-            <div class="col-md-7" data-aos="fade-up">
-              <h3>
-                Sunt consequatur ad ut est nulla consectetur reiciendis animi
-                voluptas
-              </h3>
-              <p>
-                Cupiditate placeat cupiditate placeat est ipsam culpa. Delectus
-                quia minima quod. Sunt saepe odit aut quia voluptatem hic
-                voluptas dolor doloremque.
+                Feel the magic of nighttime rhythms with BoB's Tune Hub! This
+                playlist is perfect for deep thoughts, late-night drives, and
+                cozy moments.
               </p>
               <ul>
                 <li>
                   <i class="bi bi-check"></i>
-                  <span
-                    >Ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat.</span
-                  >
+                  <span>
+                    Atmospheric lo-fi, smooth chill-hop, deep house, and
+                    electronic melodies create the perfect background for diving
+                    into the harmony of the night.
+                  </span>
                 </li>
                 <li>
                   <i class="bi bi-check"></i
                   ><span>
-                    Duis aute irure dolor in reprehenderit in voluptate
-                    velit.</span
+                    Enjoy a sound that blends tranquility with the energy of the
+                    city after dark.</span
                   >
                 </li>
                 <li>
                   <i class="bi bi-check"></i>
-                  <span
-                    >Facilis ut et voluptatem aperiam. Autem soluta ad
-                    fugiat</span
-                  >.
+                  <span>Immerse yourself in the waves of interstellar</span>.
                 </li>
               </ul>
             </div>
@@ -742,6 +742,50 @@
           <!-- Playlists Item -->
 
           <div class="row gy-4 align-items-center features-item">
+            <div class="col-md-5 d-flex align-items-center" data-aos="zoom-out">
+              <iframe
+                style="border-radius: 12px"
+                src="https://open.spotify.com/embed/playlist/02cTB0SRcy5h0q0KLkGvnR?utm_source=generator"
+                width="100%"
+                height="352"
+                frameborder="0"
+                allowfullscreen=""
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"
+              ></iframe>
+            </div>
+            <div class="col-md-7" data-aos="fade-up">
+              <h3>🎶 BoB's Tune Hub – Cosmic Dreams</h3>
+              <p class="fst-italic">
+                Embark on an intergalactic journey with sounds that transport
+                you into a world of dreams and infinite serenity.
+              </p>
+              <ul>
+                <li>
+                  <i class="bi bi-check"></i>
+                  <span
+                    >This playlist is filled with atmospheric ambient tracks,
+                    deep synthetic textures, and smooth melodies that take you
+                    beyond the stars.
+                  </span>
+                </li>
+                <li>
+                  <i class="bi bi-check"></i
+                  ><span>
+                    Feel the weightlessness, dive into the depths of the night
+                    sky. music.</span
+                  >
+                </li>
+                <li>
+                  <i class="bi bi-check"></i>
+                  <span>Immerse yourself in the waves of interstellar</span>.
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- Playlists Item -->
+
+          <!-- <div class="row gy-4 align-items-center features-item">
             <div
               class="col-md-5 order-1 order-md-2 d-flex align-items-center"
               data-aos="zoom-out"
@@ -765,7 +809,7 @@
                 mollit anim id est laborum
               </p>
             </div>
-          </div>
+          </div> -->
           <!-- Playlists Item -->
         </div>
       </section>
@@ -776,10 +820,16 @@
         <!-- Albums Title -->
         <div class="container section-title" data-aos="fade-up">
           <h2>Albums</h2>
-          <div>
+          <div class="titleneonPulse">
             <span>Vinyl</span>
             <span class="description-title">Collection</span>
           </div>
+          <a
+            href="https://music.youtube.com/browse/MPADUCbq9zqpgqXoWAJvMeFPmqeg"
+            target="_blank"
+            class="neon-btn spotify-btn"
+            ><span>Read More</span><i class="bi bi-arrow-right"></i
+          ></a>
         </div>
         <!-- End Albums Title -->
 
@@ -793,7 +843,7 @@
                   data-gallery="images-gallery"
                 >
                   <img
-                    src="assets/img/gallery/gallery-1.png"
+                    src="assets/img/gallery/gallery-1.jpg"
                     alt=""
                     class="img-fluid"
                   />
@@ -805,8 +855,8 @@
             <div class="col-lg-3 col-md-4">
               <div class="gallery-item">
                 <a
-                  href="assets/img/gallery/gallery-2.jpg"
-                  class="glightbox"
+                  href="https://music.youtube.com/playlist?list=OLAK5uy_l2TGRuqv3XnkEemxYbJB-EqD68uM2Ip9c&si=BqtmBmCPxnOQp8Wc"
+                  target="_blank"
                   data-gallery="images-gallery"
                 >
                   <img
@@ -822,8 +872,8 @@
             <div class="col-lg-3 col-md-4">
               <div class="gallery-item">
                 <a
-                  href="assets/img/gallery/gallery-3.jpg"
-                  class="glightbox"
+                  href="https://music.youtube.com/playlist?list=OLAK5uy_lfemuhcQnVZDX_lDArQYblWIZnu23oYrA&si=MK5YKYytmav8Rh1J"
+                  target="_blank"
                   data-gallery="images-gallery"
                 >
                   <img
@@ -839,8 +889,8 @@
             <div class="col-lg-3 col-md-4">
               <div class="gallery-item">
                 <a
-                  href="assets/img/gallery/gallery-4.jpg"
-                  class="glightbox"
+                  href="https://music.youtube.com/playlist?list=OLAK5uy_nTi5bkzV7K0TTn1Mdg3fWi5_19yrlynGQ&si=zBBK-utqOrBNN4Fy"
+                  target="_blank"
                   data-gallery="images-gallery"
                 >
                   <img
@@ -856,8 +906,8 @@
             <div class="col-lg-3 col-md-4">
               <div class="gallery-item">
                 <a
-                  href="assets/img/gallery/gallery-5.jpg"
-                  class="glightbox"
+                  href="https://music.youtube.com/playlist?list=OLAK5uy_lSoCMH2etCHwyq6sythCi839qcz-lGtyc&si=P9lnZxDmg07yXOdP"
+                  target="_blank"
                   data-gallery="images-gallery"
                 >
                   <img
@@ -873,8 +923,8 @@
             <div class="col-lg-3 col-md-4">
               <div class="gallery-item">
                 <a
-                  href="assets/img/gallery/gallery-6.jpg"
-                  class="glightbox"
+                  href="https://music.youtube.com/playlist?list=OLAK5uy_nqg0AWiYLOklRF6zEXLIMYAlUF5M_gftw&si=tbyUYFinnWQj9HN8"
+                  target="_blank"
                   data-gallery="images-gallery"
                 >
                   <img
@@ -890,8 +940,8 @@
             <div class="col-lg-3 col-md-4">
               <div class="gallery-item">
                 <a
-                  href="assets/img/gallery/gallery-7.jpg"
-                  class="glightbox"
+                  href="https://music.youtube.com/playlist?list=OLAK5uy_k8M9kr7qCKE4cBmsPxQcDVEXipbVl0KaE&si=InFBe7cB5sGnqW5U"
+                  target="_blank"
                   data-gallery="images-gallery"
                 >
                   <img
@@ -907,8 +957,8 @@
             <div class="col-lg-3 col-md-4">
               <div class="gallery-item">
                 <a
-                  href="assets/img/gallery/gallery-8.jpg"
-                  class="glightbox"
+                  href="https://music.youtube.com/playlist?list=OLAK5uy_kfQ0OTx9EZYyjwLSp-AWVELT8Y1EnaLTg&si=iTkIQ9PYnvGpbs7n"
+                  target="_blank"
                   data-gallery="images-gallery"
                 >
                   <img
@@ -958,25 +1008,42 @@
                     class="testimonial-img"
                     alt=""
                   />
-                  <h3>Saul Goodman</h3>
-                  <h4>Ceo &amp; Founder</h4>
-                  <div class="stars">
-                    <i class="bi bi-star-fill"></i
-                    ><i class="bi bi-star-fill"></i
-                    ><i class="bi bi-star-fill"></i
-                    ><i class="bi bi-star-fill"></i
-                    ><i class="bi bi-star-fill"></i>
-                  </div>
+                  <h3>BoB's Fairy Tales</h3>
+                  <h4>Designer & Animator</h4>
                   <p>
                     <i class="bi bi-quote quote-icon-left"></i>
                     <span
-                      >Proin iaculis purus consequat sem cure digni ssim donec
-                      porttitora entum suscipit rhoncus. Accusantium quam,
-                      ultricies eget id, aliquam eget nibh et. Maecen aliquam,
-                      risus at semper.</span
+                      >As a channel partner, we genuinely recommend this music
+                      portal! We also use their services to distribute our music
+                      and are very satisfied with the results. If you're looking
+                      for a reliable platform with top-quality service — BoB's
+                      Tune Hub is the way to go! 🚀</span
                     >
                     <i class="bi bi-quote quote-icon-right"></i>
                   </p>
+                </div>
+                <!-- More button -->
+                <div class="text-center mt-4">
+                  <a
+                    href="https://www.facebook.com/profile.php?id=61573649232948&sk=reviews"
+                    target="_blank"
+                    class="btn"
+                    style="
+                      display: block;
+                      width: 100px;
+                      height: 30px;
+                      padding: 10px 0;
+                      font-size: 10px;
+                      text-align: center;
+                      text-decoration: none;
+                      background: none;
+                      border: 1px solid #ccc;
+                      color: #18ea01;
+                      margin: 0 auto;
+                    "
+                  >
+                    More
+                  </a>
                 </div>
               </div>
               <!-- End testimonial item -->
@@ -988,25 +1055,41 @@
                     class="testimonial-img"
                     alt=""
                   />
-                  <h3>Sara Wilsson</h3>
+                  <h3>Painter Master</h3>
                   <h4>Designer</h4>
-                  <div class="stars">
-                    <i class="bi bi-star-fill"></i
-                    ><i class="bi bi-star-fill"></i
-                    ><i class="bi bi-star-fill"></i
-                    ><i class="bi bi-star-fill"></i
-                    ><i class="bi bi-star-fill"></i>
-                  </div>
                   <p>
                     <i class="bi bi-quote quote-icon-left"></i>
                     <span
-                      >Export tempor illum tamen malis malis eram quae irure
-                      esse labore quem cillum quid cillum eram malis quorum
-                      velit fore eram velit sunt aliqua noster fugiat irure amet
-                      legam anim culpa.</span
-                    >
+                      >Так, дійсно, BoB's Tune Hub — це справжній вінтаж! 🌟
+                      Стильні треки з ретро-відчуттям та якісним звучанням
+                      переносять у золоті часи музики. Ідеальний вибір для тих,
+                      хто цінує класику з сучасним звучанням!
+                    </span>
                     <i class="bi bi-quote quote-icon-right"></i>
                   </p>
+                </div>
+                <!-- More button -->
+                <div class="text-center mt-4">
+                  <a
+                    href="https://www.facebook.com/profile.php?id=61573649232948&sk=reviews"
+                    target="_blank"
+                    class="btn"
+                    style="
+                      display: block;
+                      width: 100px;
+                      height: 30px;
+                      padding: 10px 0;
+                      font-size: 10px;
+                      text-align: center;
+                      text-decoration: none;
+                      background: none;
+                      border: 1px solid #ccc;
+                      color: #18ea01;
+                      margin: 0 auto;
+                    "
+                  >
+                    More
+                  </a>
                 </div>
               </div>
               <!-- End testimonial item -->
@@ -1018,25 +1101,40 @@
                     class="testimonial-img"
                     alt=""
                   />
-                  <h3>Jena Karlis</h3>
-                  <h4>Store Owner</h4>
-                  <div class="stars">
-                    <i class="bi bi-star-fill"></i
-                    ><i class="bi bi-star-fill"></i
-                    ><i class="bi bi-star-fill"></i
-                    ><i class="bi bi-star-fill"></i
-                    ><i class="bi bi-star-fill"></i>
-                  </div>
+                  <h3>Enigma-Dent</h3>
+                  <h4>Dentist</h4>
                   <p>
                     <i class="bi bi-quote quote-icon-left"></i>
                     <span
-                      >Enim nisi quem export duis labore cillum quae magna enim
-                      sint quorum nulla quem veniam duis minim tempor labore
-                      quem eram duis noster aute amet eram fore quis sint
-                      minim.</span
+                      >🎶Також рекомендуємо BoB's Tune Hub для гарного настрою!
+                      Якісна музика, круті треки та незабутня атмосфера.
+                      Ідеально, щоб підняти настрій! 🔥</span
                     >
                     <i class="bi bi-quote quote-icon-right"></i>
                   </p>
+                </div>
+                <!-- More button -->
+                <div class="text-center mt-4">
+                  <a
+                    href="https://www.facebook.com/profile.php?id=61573649232948&sk=reviews"
+                    target="_blank"
+                    class="btn"
+                    style="
+                      display: block;
+                      width: 100px;
+                      height: 30px;
+                      padding: 10px 0;
+                      font-size: 10px;
+                      text-align: center;
+                      text-decoration: none;
+                      background: none;
+                      border: 1px solid #ccc;
+                      color: #18ea01;
+                      margin: 0 auto;
+                    "
+                  >
+                    More
+                  </a>
                 </div>
               </div>
               <!-- End testimonial item -->
@@ -1048,25 +1146,41 @@
                     class="testimonial-img"
                     alt=""
                   />
-                  <h3>Matt Brandon</h3>
-                  <h4>Freelancer</h4>
-                  <div class="stars">
-                    <i class="bi bi-star-fill"></i
-                    ><i class="bi bi-star-fill"></i
-                    ><i class="bi bi-star-fill"></i
-                    ><i class="bi bi-star-fill"></i
-                    ><i class="bi bi-star-fill"></i>
-                  </div>
+                  <h3>Little Creator Now</h3>
+                  <h4>Art creator</h4>
                   <p>
                     <i class="bi bi-quote quote-icon-left"></i>
                     <span
-                      >Fugiat enim eram quae cillum dolore dolor amet nulla
-                      culpa multos export minim fugiat minim velit minim dolor
-                      enim duis veniam ipsum anim magna sunt elit fore quem
-                      dolore labore illum veniam.</span
+                      >BoB's Tune Hub is a true discovery for everyone who loves
+                      quality music! 🔥 Here, you can always find the perfect
+                      playlist for any mood – from energetic hits to relaxing
+                      atmospheric tracks.</span
                     >
                     <i class="bi bi-quote quote-icon-right"></i>
                   </p>
+                </div>
+                <!-- More button -->
+                <div class="text-center mt-4">
+                  <a
+                    href="https://www.facebook.com/profile.php?id=61573649232948&sk=reviews"
+                    target="_blank"
+                    class="btn"
+                    style="
+                      display: block;
+                      width: 100px;
+                      height: 30px;
+                      padding: 10px 0;
+                      font-size: 10px;
+                      text-align: center;
+                      text-decoration: none;
+                      background: none;
+                      border: 1px solid #ccc;
+                      color: #18ea01;
+                      margin: 0 auto;
+                    "
+                  >
+                    More
+                  </a>
                 </div>
               </div>
               <!-- End testimonial item -->
@@ -1078,25 +1192,42 @@
                     class="testimonial-img"
                     alt=""
                   />
-                  <h3>John Larson</h3>
-                  <h4>Entrepreneur</h4>
-                  <div class="stars">
-                    <i class="bi bi-star-fill"></i
-                    ><i class="bi bi-star-fill"></i
-                    ><i class="bi bi-star-fill"></i
-                    ><i class="bi bi-star-fill"></i
-                    ><i class="bi bi-star-fill"></i>
-                  </div>
+                  <h3>ANMA-electric</h3>
+                  <h4>Energetic</h4>
                   <p>
                     <i class="bi bi-quote quote-icon-left"></i>
                     <span
-                      >Quis quorum aliqua sint quem legam fore sunt eram irure
-                      aliqua veniam tempor noster veniam enim culpa labore duis
-                      sunt culpa nulla illum cillum fugiat legam esse veniam
-                      culpa fore nisi cillum quid.</span
+                      >If you're looking for a place where music truly comes to
+                      life, then BoB's Tune Hub is exactly what you need! 🎧
+                      Here, you can always discover something new and inspiring,
+                      and every playlist feels like a journey into the world of
+                      quality sound.</span
                     >
                     <i class="bi bi-quote quote-icon-right"></i>
                   </p>
+                </div>
+                <!-- More button -->
+                <div class="text-center mt-4">
+                  <a
+                    href="https://www.facebook.com/profile.php?id=61573649232948&sk=reviews"
+                    target="_blank"
+                    class="btn"
+                    style="
+                      display: block;
+                      width: 100px;
+                      height: 30px;
+                      padding: 10px 0;
+                      font-size: 10px;
+                      text-align: center;
+                      text-decoration: none;
+                      background: none;
+                      border: 1px solid #ccc;
+                      color: #18ea01;
+                      margin: 0 auto;
+                    "
+                  >
+                    More
+                  </a>
                 </div>
               </div>
               <!-- End testimonial item -->
@@ -1112,16 +1243,17 @@
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
           <h2>Team</h2>
-          <div>
+          <div class="titleneonPulse">
             <span>Check Our</span> <span class="description-title">Team</span>
           </div>
         </div>
         <!-- End Section Title -->
 
         <div class="container">
-          <div class="row gy-5">
+          <div class="row justify-content-center gy-5 team-spacing">
+            <!-- Додано team-spacing -->
             <div
-              class="col-lg-4 col-md-6"
+              class="col-lg-4 col-md-6 team-member"
               data-aos="fade-up"
               data-aos-delay="100"
             >
@@ -1134,13 +1266,17 @@
                   />
                 </div>
                 <div class="member-info">
-                  <h4>Walter White</h4>
-                  <span>Chief Executive Officer</span>
+                  <h4>BABENKO Anton</h4>
+                  <span>Producer</span>
                   <div class="social">
-                    <a href=""><i class="bi bi-twitter-x"></i></a>
-                    <a href=""><i class="bi bi-facebook"></i></a>
-                    <a href=""><i class="bi bi-instagram"></i></a>
-                    <a href=""><i class="bi bi-linkedin"></i></a>
+                    <a href="https://x.com/AntonBabenko11" target="_blank"
+                      ><i class="bi bi-twitter-x"></i
+                    ></a>
+                    <a
+                      href="https://www.linkedin.com/in/babenko-anton/"
+                      target="_blank"
+                      ><i class="bi bi-linkedin"></i
+                    ></a>
                   </div>
                 </div>
               </div>
@@ -1148,7 +1284,7 @@
             <!-- End Team Member -->
 
             <div
-              class="col-lg-4 col-md-6"
+              class="col-lg-4 col-md-6 team-member"
               data-aos="fade-up"
               data-aos-delay="200"
             >
@@ -1161,40 +1297,22 @@
                   />
                 </div>
                 <div class="member-info">
-                  <h4>Sarah Jhonson</h4>
-                  <span>Product Manager</span>
+                  <h4>BoB’s Tune Hub</h4>
+                  <span>Main Artist, Music Composer</span>
                   <div class="social">
-                    <a href=""><i class="bi bi-twitter-x"></i></a>
-                    <a href=""><i class="bi bi-facebook"></i></a>
-                    <a href=""><i class="bi bi-instagram"></i></a>
-                    <a href=""><i class="bi bi-linkedin"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- End Team Member -->
-
-            <div
-              class="col-lg-4 col-md-6"
-              data-aos="fade-up"
-              data-aos-delay="300"
-            >
-              <div class="member">
-                <div class="pic">
-                  <img
-                    src="assets/img/team/team-3.jpg"
-                    class="img-fluid"
-                    alt=""
-                  />
-                </div>
-                <div class="member-info">
-                  <h4>William Anderson</h4>
-                  <span>CTO</span>
-                  <div class="social">
-                    <a href=""><i class="bi bi-twitter-x"></i></a>
-                    <a href=""><i class="bi bi-facebook"></i></a>
-                    <a href=""><i class="bi bi-instagram"></i></a>
-                    <a href=""><i class="bi bi-linkedin"></i></a>
+                    <a href="https://x.com/hub_bo64354"
+                      ><i class="bi bi-twitter-x"></i
+                    ></a>
+                    <a
+                      href="https://www.facebook.com/profile.php?id=61573649232948"
+                      target="_blank"
+                      ><i class="bi bi-facebook"></i
+                    ></a>
+                    <a
+                      href="https://www.instagram.com/bobs.tune.hub/"
+                      target="_blank"
+                      ><i class="bi bi-instagram"></i
+                    ></a>
                   </div>
                 </div>
               </div>
@@ -1204,55 +1322,35 @@
         </div>
       </section>
       <!-- /Team Section -->
-
-      <!-- Contact Section -->
-      <section id="contact" class="contact section"></section>
-      <!-- /Contact Section -->
     </main>
 
     <footer id="footer" class="footer dark-background">
       <div class="container footer-top">
         <div class="row gy-4">
           <div class="col-lg-4 col-md-6 footer-about">
-            <a href="index.html" class="logo d-flex align-items-center">
-              <span class="sitename">Bootslander</span>
+            <a
+              href="https://youtube.com/@bobstunehub?si=iyNECqLNCyQIeT6B"
+              target="_blank"
+              class="logo d-flex align-items-center"
+            >
+              <span class="sitename sitename2">BoB's Tune Hub</span>
             </a>
             <div class="footer-contact pt-3">
-              <p>A108 Adam Street</p>
-              <p>New York, NY 535022</p>
-              <p class="mt-3">
-                <strong>Phone:</strong> <span>+1 5589 55488 55</span>
-              </p>
-              <p><strong>Email:</strong> <span>info@example.com</span></p>
+              <!-- <strong>Phone:</strong> <span>+1 5589 55488 55</span> -->
+              <p><strong>Email:</strong> <span>bobstunehub@gmail.com </span></p>
             </div>
             <div class="social-links d-flex mt-4">
-              <a href=""><i class="bi bi-twitter-x"></i></a>
-              <a href=""><i class="bi bi-facebook"></i></a>
-              <a href=""><i class="bi bi-instagram"></i></a>
-              <a href=""><i class="bi bi-linkedin"></i></a>
+              <a href="https://x.com/hub_bo64354"
+                ><i class="bi bi-twitter-x"></i
+              ></a>
+              <a href="https://www.facebook.com/profile.php?id=61573649232948"
+                ><i class="bi bi-facebook"></i
+              ></a>
+              <a href="https://www.instagram.com/bobs.tune.hub/"
+                ><i class="bi bi-instagram"></i
+              ></a>
+              <!-- <a href=""><i class="bi bi-linkedin"></i></a> -->
             </div>
-          </div>
-
-          <div class="col-lg-2 col-md-3 footer-links">
-            <h4>Useful Links</h4>
-            <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">About us</a></li>
-              <li><a href="#">Services</a></li>
-              <li><a href="#">Terms of service</a></li>
-              <li><a href="#">Privacy policy</a></li>
-            </ul>
-          </div>
-
-          <div class="col-lg-2 col-md-3 footer-links">
-            <h4>Our Services</h4>
-            <ul>
-              <li><a href="#">Web Design</a></li>
-              <li><a href="#">Web Development</a></li>
-              <li><a href="#">Product Management</a></li>
-              <li><a href="#">Marketing</a></li>
-              <li><a href="#">Graphic Design</a></li>
-            </ul>
           </div>
 
           <div class="col-lg-4 col-md-12 footer-newsletter">
@@ -1261,21 +1359,16 @@
               Subscribe to our newsletter and receive the latest news about our
               products and services!
             </p>
-            <form
-              action="forms/newsletter.php"
-              method="post"
-              class="php-email-form"
-            >
+            <form id="newsletter-form">
               <div class="newsletter-form">
-                <input type="email" name="email" /><input
-                  type="submit"
-                  value="Subscribe"
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="Enter your email"
+                  required
                 />
-              </div>
-              <div class="loading">Loading</div>
-              <div class="error-message"></div>
-              <div class="sent-message">
-                Your subscription request has been sent. Thank you!
+                <input type="submit" value="Subscribe" />
               </div>
             </form>
           </div>
@@ -1314,5 +1407,101 @@
     <script src="assets/js/main.js"></script>
     <script type="module" src="assets/js/youtube-subs.js"></script>
     <script type="module" src="assets/js/youtube-music-subs.js"></script>
+    <script type="module" src="assets/js/tiktok-subs.js"></script>
+    <script type="module" src="assets/js/config.js"></script>
+
+    <script type="module">
+      import CONFIG from "./assets/js/config.js";
+      const API_KEY = CONFIG.API_KEY;
+      const VIDEO_ID = "MmwBiDH2824"; // ID твого відео
+      let player;
+      let isPlayed = false;
+
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player("player", {
+          height: "0",
+          width: "0",
+          videoId: VIDEO_ID,
+          playerVars: {
+            autoplay: 0, // Автозапуск вимкнено
+            loop: 1,
+            playlist: VIDEO_ID,
+            controls: 0,
+            showinfo: 0,
+            modestbranding: 1,
+          },
+          events: {
+            onReady: function (event) {
+              document.addEventListener("click", function () {
+                if (!isPlayed) {
+                  event.target.playVideo();
+                  event.target.setVolume(10); // Фіксована гучність 15%
+                  isPlayed = true;
+
+                  // Зупиняємо через 31 секунду
+                  setTimeout(() => {
+                    event.target.pauseVideo();
+                    console.log("Відео зупинено через 31 секунду");
+                  }, 33000); // 31 секунда = 31000 мс
+                }
+              });
+            },
+          },
+        });
+      }
+
+      // Завантажуємо YouTube API
+      let tag = document.createElement("script");
+      tag.src = "https://www.youtube.com/iframe_api";
+      let firstScriptTag = document.getElementsByTagName("script")[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+      // Функція для отримання кількості переглядів
+      async function fetchViews() {
+        let url = `https://www.googleapis.com/youtube/v3/videos?id=${VIDEO_ID}&part=statistics&key=${API_KEY}`;
+        let response = await fetch(url);
+        let data = await response.json();
+        let views = data.items[0].statistics.viewCount;
+        document.getElementById("youtubeViews").innerText = `Views: ${views}`;
+      }
+
+      fetchViews();
+    </script>
+
+    <script>
+      document
+        .getElementById("newsletter-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          let email = document.getElementById("email").value;
+          console.log("Отриманий email:", email); // ПЕРЕВІРЯЄМО EMAIL
+
+          fetch(
+            "https://script.google.com/macros/s/AKfycbwyyayGPE6adaMBbAUoWJa8WSDzgLDHT3zQXlM8aaCPgwVJ7Bs5ome801OD1VscKis/exec",
+            {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ email: email }), // ТЕПЕР ВІДПРАВЛЯЄМО ВВЕДЕНИЙ EMAIL
+            }
+          )
+            .then((response) => {
+              console.log("Статус відповіді:", response.status); // ЛОГУЄМО HTTP-СТАТУС
+              return response.text();
+            })
+            .then((data) => {
+              console.log("Відповідь від сервера:", data); // ЛОГУЄМО ВІДПОВІДЬ
+              if (data.includes("Success")) {
+                alert("Subscribed successfully!");
+              } else {
+                alert("Помилка: " + data);
+              }
+            })
+            .catch((error) => {
+              console.error("Fetch error:", error);
+              alert("Error subscribing!");
+            });
+        });
+    </script>
   </body>
 </html>

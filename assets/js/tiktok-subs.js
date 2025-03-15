@@ -1,33 +1,21 @@
-async function getTikTokStats() {
-    const username = "bobs.tune.hub"; // Твій TikTok нікнейм
-    const url = `https://www.tiktok.com/@${username}`;
+import CONFIG from "./conf.js"; // Підключаємо конфігурацію
+
+async function getTikTokFollowers() {
+    const url = `https://open.tiktokapis.com/v2/user/info?username=${CONFIG.TIKTOK_USERNAME}`;
 
     try {
         const response = await fetch(url, {
-            headers: { "User-Agent": "Mozilla/5.0" } // Уникаємо блокування
+            headers: {
+                "Authorization": `Bearer ${CONFIG.TIKTOK_CLIENT_SECRET}`
+            }
         });
-        const text = await response.text();
-
-        // Витягуємо підписників
-        const followersMatch = text.match(/"followerCount":(\d+)/);
-        if (followersMatch) {
-            document.getElementById("tiktok-followers").innerText = followersMatch[1];
-        } else {
-            document.getElementById("tiktok-followers").innerText = "N/A";
-        }
-
-        // Витягуємо уподобайки
-        const likesMatch = text.match(/"heartCount":(\d+)/);
-        if (likesMatch) {
-            document.getElementById("tiktok-likes").innerText = likesMatch[1];
-        } else {
-            document.getElementById("tiktok-likes").innerText = "N/A";
-        }
+        const data = await response.json();
+        document.getElementById("tiktok-followers").innerText = data.data.follower_count;
     } catch (error) {
-        console.error("Помилка отримання статистики TikTok:", error);
+        console.error("Помилка отримання підписників TikTok:", error);
     }
 }
 
-// Оновлюємо кожні 30 секунд
-setInterval(getTikTokStats, 30000);
-getTikTokStats();
+// Викликаємо при завантаженні
+getTikTokFollowers();
+setInterval(getTikTokFollowers, 30000);

@@ -1939,3 +1939,156 @@ h1 span {
   /* Розмір іконки */
   animation: pulse 1.5s infinite ease-in-out;
 }
+
+
+
+@keyframes neonPulse {
+  0% {
+    text-shadow: 0 0 5px #FF00FF, 0 0 10px #FF00FF, 0 0 15px #9000FF, 0 0 20px #9000FF;
+  }
+
+  50% {
+    text-shadow: 0 0 10px #FF00FF, 0 0 20px #FF00FF, 0 0 30px #9000FF, 0 0 40px #9000FF;
+  }
+
+  100% {
+    text-shadow: 0 0 5px #FF00FF, 0 0 10px #FF00FF, 0 0 15px #9000FF, 0 0 20px #9000FF;
+  }
+}
+
+.titleneonPulse {
+  font-size: 24px;
+  font-weight: bold;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  animation: neonPulse 1.5s infinite alternate ease-in-out;
+}
+
+.gallery-item img {
+  width: 100%;
+  /* Забезпечує адаптивність */
+  height: auto;
+  /* Автоматична висота для збереження пропорцій */
+  object-fit: cover;
+  /* Забезпечує рівномірне відображення без деформації */
+  border-radius: 0;
+  /* Видаляє закруглені кути */
+}
+
+
+
+
+
+
+
+/* Базовий стиль для всіх неонових кнопок */
+.neon-btn {
+  display: inline-block;
+  width: 120px;
+  padding: 10px 0;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  position: relative;
+  transition: 0.3s;
+  overflow: hidden;
+  font-weight: bold;
+}
+
+/* Неонова кнопка YouTube */
+.youtube-btn {
+  border: 2px solid #1db954;
+  /* Неоновий зелений */
+  color: #1db954;
+  background: none;
+  animation: youtube-pulse 1.5s infinite alternate;
+}
+
+.youtube-btn:hover {
+  box-shadow: 0 0 15px #1db954, 0 0 30px #1db954;
+}
+
+/* Неонова кнопка Spotify */
+.spotify-btn {
+  border: 2px solid #1db954;
+  /* Неоновий зелений для Spotify */
+  color: #1db954;
+  background: none;
+  animation: spotify-pulse 1.5s infinite alternate;
+}
+
+/* Анімація пульсації для YouTube */
+@keyframes youtube-pulse {
+  0% {
+    box-shadow: 0 0 10px #1db954;
+  }
+
+  50% {
+    box-shadow: 0 0 20px #1db954, 0 0 40px #1db954;
+  }
+
+  100% {
+    box-shadow: 0 0 10px #1db954;
+  }
+}
+
+/* Анімація пульсації для Spotify */
+@keyframes spotify-pulse {
+  0% {
+    box-shadow: 0 0 10px #1db954;
+  }
+
+  50% {
+    box-shadow: 0 0 20px #1db954, 0 0 40px #1db954;
+  }
+
+  100% {
+    box-shadow: 0 0 10px #1db954;
+  }
+}
+
+/* Стиль для YouTube кнопки */
+.neon-btn.youtube-btn {
+  animation: youtube-pulse 2s infinite alternate;
+}
+
+/* Стиль для Spotify кнопки */
+.neon-btn.spotify-btn {
+  animation: spotify-pulse 2s infinite alternate;
+  animation-delay: 1s;
+  /* Затримка, щоб пульсували по черзі */
+}
+
+
+/* Додаємо простір між членами команди */
+.team-spacing {
+  gap: 50px;
+  /* Відстань між блоками */
+}
+
+/* Збільшуємо відстань між самими картками */
+.team-member {
+  margin: 0 30px;
+  /* Відступи ліворуч і праворуч */
+}
+
+
+.youtube-container {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 9999;
+  /* Впевнюємося, що блок не перекривається іншими елементами */
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  /* Відступ між плеєром і текстом */
+}
+
+/* Якщо хочеш приховати плеєр, але залишити звук */
+#player {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
