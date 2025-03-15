@@ -1474,34 +1474,21 @@
           e.preventDefault();
 
           let email = document.getElementById("email").value;
-          console.log("Отриманий email:", email); // Логування для перевірки
+          console.log("Отриманий email:", email); // Перевіряємо email
 
           fetch(
             "https://script.google.com/macros/s/AKfycbwyyayGPE6adaMBbAUoWJa8WSDzgLDHT3zQXlM8aaCPgwVJ7Bs5ome801OD1VscKis/exec",
             {
               method: "POST",
-              mode: "cors", // Додаємо режим CORS
               headers: {
                 "Content-Type": "application/json",
               },
-              body: JSON.stringify({ email: email }), // Передаємо динамічне значення
+              body: JSON.stringify({ email: email }),
             }
           )
-            .then((response) => {
-              console.log("Відповідь сервера:", response);
-              if (!response.ok) {
-                throw new Error("Помилка під час запиту");
-              }
-              return response.json(); // Якщо відповідь не JSON, це викличе помилку
-            })
-            .then((data) => {
-              console.log("Success:", data);
-              alert("Subscribed successfully!");
-            })
-            .catch((error) => {
-              console.error("Помилка підписки:", error);
-              alert("Error subscribing!");
-            });
+            .then((response) => response.json())
+            .then((data) => console.log("Success:", data))
+            .catch((error) => console.error("Error:", error));
         });
     </script>
   </body>
