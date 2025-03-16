@@ -1,22 +1,14 @@
 import { CONFIG } from "./config.js"; // Підключаємо конфігурацію
 
 async function getTikTokUserID(username) {
-    const url = `https://open.tiktokapis.com/v2/user/info?username=${username}`;
+    const apiUrl = `https://open.tiktokapis.com/v2/user/info?username=${username}`;
+    const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(apiUrl)}`;
 
     try {
-        const response = await fetch(url, {
-            method: "GET",
-            headers: {
-                "Authorization": `Bearer ${CONFIG.TIKTOK_CLIENT_SECRET}`,
-                "Content-Type": "application/json"
-            }
-        });
-
-        if (!response.ok) {
-            throw new Error(`Помилка API: ${response.status} - ${response.statusText}`);
-        }
-
-        const data = await response.json();
+        const response = await fetch(proxyUrl);
+        const result = await response.json();
+        const data = JSON.parse(result.contents); // Розпарсити JSON-відповідь
+        
         if (data && data.data && data.data.user_id) {
             return data.data.user_id;
         } else {
@@ -33,22 +25,14 @@ async function getTikTokFollowers() {
     const user_id = await getTikTokUserID(CONFIG.TIKTOK_USERNAME);
     if (!user_id) return;
 
-    const url = `https://open.tiktokapis.com/v2/user/followers?user_id=${user_id}`;
+    const apiUrl = `https://open.tiktokapis.com/v2/user/followers?user_id=${user_id}`;
+    const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(apiUrl)}`;
 
     try {
-        const response = await fetch(url, {
-            method: "GET",
-            headers: {
-                "Authorization": `Bearer ${CONFIG.TIKTOK_CLIENT_SECRET}`,
-                "Content-Type": "application/json"
-            }
-        });
+        const response = await fetch(proxyUrl);
+        const result = await response.json();
+        const data = JSON.parse(result.contents); // Розпарсити JSON
 
-        if (!response.ok) {
-            throw new Error(`Помилка API: ${response.status} - ${response.statusText}`);
-        }
-
-        const data = await response.json();
         document.getElementById("tiktok-followers").innerText = data.data.follower_count;
     } catch (error) {
         console.error("Помилка отримання підписників TikTok:", error);
