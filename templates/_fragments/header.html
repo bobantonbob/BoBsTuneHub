@@ -1,0 +1,50 @@
+{% load static %}
+<header id="header" class="header d-flex align-items-center fixed-top">
+  <div
+    class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between"
+  >
+    <a
+      href="https://hyperfollow.com/BoBsTuneHub"
+      target="_blank"
+      class="logo d-flex align-items-center"
+    >
+      <h1 class="sitename sitename2">BoB's Tune Hub</h1>
+    </a>
+
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li>
+          <a href="/" class="{% if page == 'home' %}active{% endif %}">Home</a>
+        </li>
+        <li>
+          <a href="/singles" class="{% if page == 'singles' %}active{% endif %}"
+            >Singles</a
+          >
+        </li>
+        <li>
+          <a
+            href="/playlists"
+            class="{% if page == 'playlists' %}active{% endif %}"
+            >Playlists</a
+          >
+        </li>
+        <li>
+          <a href="/music" class="{% if page == 'music' %}active{% endif %}"
+            >Albums Vinyl</a
+          >
+        </li>
+        <li>
+          <a href="/team" class="{% if page == 'team' %}active{% endif %}"
+            >Team</a
+          >
+        </li>
+      </ul>
+      <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+    </nav>
+  </div>
+</header>
+<!-- Незалежний YouTube Player у правому верхньому куті -->
+<div class="youtube-container">
+  <div id="player"></div>
+  <p id="youtubeViews">Views: Loading...</p>
+</div>
